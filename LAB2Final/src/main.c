@@ -5,24 +5,12 @@
 #define NOT_FOUND (-1)
 
 
-__asm void parking(float mem[10] ,float lic[10]) //insert parking licence and hours
-{
-loop
-			LDR R2,=0xaa13e002
-			LSLS R2,R2,#16
-			LDR R3,[R0]
-			STR  R3,[R2]
-			ADDS R0,#4
-			CMP R2,#0
-			BNE loop
-			BX lr
-}
 
 __asm void cost(float arr[10],int lic)
 {
 	LSLS R1,R1,#2
 	LDR R2,[R0,R1]
-	CMP R2,#0x00000000
+	CMP R2,#0x00000000;to sugkrinw me to 0
 	BEQ gotoerror
 	LDR r3,=0x3f800000 ;1
 	CMP R2,R3
@@ -32,21 +20,25 @@ __asm void cost(float arr[10],int lic)
 	BLT goto050
 	LDR r3,=0x40400000 ;3
 	CMP R2,R3
-	BLT goto1
+	BLT goto1 ; an den plirei kamoia apo tis sunthikes bazw na plirwnei 5 
 	LDR r3,=0x40a00000 ;5
+	STR R3,[R3]
 	bx lr
 	
 goto025
 			LDR r3,=0x3f800000 ;0.25
+			STR R3,[R3]
 			bx lr
 
 goto050
 			LDR r3,=0x3f000000
+			STR R3,[R3]
 			bx lr
 goto1
 			LDR r3,=0x3f800000
+			STR R3,[R3]
 			bx lr
-gotoerror
+gotoerror ; ama i timi einai to 0 tote den epistrefetai kamoia timi
 			bx lr
 	
 }
@@ -55,11 +47,9 @@ gotoerror
 
 int main(void)
 {
-float charlic[10]={0xa1b2,0xf1f2,0x21cc,0xeeff,0xda90,0x421d,0x8aa1,0x5ead,0xa110,0x4aed};
 float mem[10] = {1.2,2.2,3.3,4.4,5.5,0.6,7.7,8.8,9.9,0};
 float price=0;
-parking(mem,charlic);
-//cost(mem,5);
+cost(mem,5);// vriskei to kostos analoga me tin thesi stin mnimi poy epilegoyme
 
 		while (1)
 			;

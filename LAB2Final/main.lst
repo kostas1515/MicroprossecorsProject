@@ -7142,18 +7142,6 @@ N#define NUM_ELS (10)
 N#define NOT_FOUND (-1)
 N
 N
-N__asm void parking(float p[10] ,float lic[10]) //insert parking licence and hours
-N{
-Nloop
-N			LDR R2,[R1]
-N			LSLS R2,R2,#16
-N			LDR R3,[R0]
-N			STR  R3,[R2]
-N			ADDS R0,#4
-N			CMP R2,#0
-N			BNE loop
-N			BX lr
-N}
 N
 N__asm void cost(float arr[10],int lic)
 N{
@@ -7171,17 +7159,21 @@ N	LDR r3,=0x40400000 ;3
 N	CMP R2,R3
 N	BLT goto1
 N	LDR r3,=0x40a00000 ;5
+N	STR R3,[R3]
 N	bx lr
 N	
 Ngoto025
 N			LDR r3,=0x3f800000 ;0.25
+N			STR R3,[R3]
 N			bx lr
 N
 Ngoto050
 N			LDR r3,=0x3f000000
+N			STR R3,[R3]
 N			bx lr
 Ngoto1
 N			LDR r3,=0x3f800000
+N			STR R3,[R3]
 N			bx lr
 Ngotoerror
 N			bx lr
@@ -7192,14 +7184,12 @@ N
 N
 Nint main(void)
 N{
-Nfloat charlic[10]={0xa1b2,0xf1f2,0x21cc,0xeeff,0xda90,0x421d,0x8aa1,0x5ead,0xa110,0x4aed};
 Nfloat mem[10] = {1.2,2.2,3.3,4.4,5.5,0.6,7.7,8.8,9.9,0};
 Nfloat price=0;
-Nparking(mem,charlic);
-N//cost(mem,5);
+Ncost(mem,5);
 N
 N		while (1)
 N			;
-W "src\main.c" 60 7 variable "price"  was declared but never referenced
+W "src\main.c" 51 7 variable "price"  was declared but never referenced
 N}
 N// *******************************ARM University Program Copyright © ARM Ltd 2013*************************************   
