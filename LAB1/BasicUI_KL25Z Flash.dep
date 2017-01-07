@@ -1,0 +1,8 @@
+Dependencies for Project 'BasicUI', Target 'KL25Z Flash': (DO NOT MODIFY !)
+F (.\startup_MKL25Z4.s)(0x52C2FF7A)(--cpu Cortex-M0+ --li --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I"C:\Users\Kostas\Desktop\Σχολή\Microprocessors\Ασκήσεις Εργαστηρίων\LAB1\RTE\_KL25Z_Flash"-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\Device\ARM\ARMCM0plus\Include--pd "__UVISION_VERSION SETA 522" --pd "_RTE_ SETA 1" --pd "ARMCM0P SETA 1"--list .\startup_mkl25z4.lst --xref -o .\startup_mkl25z4.o --depend .\startup_mkl25z4.d)
+F (.\system_MKL25Z4.c)(0x527621C2)(-c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I include-I"C:\Users\Kostas\Desktop\Σχολή\Microprocessors\Ασκήσεις Εργαστηρίων\LAB1\RTE\_KL25Z_Flash"-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\Device\ARM\ARMCM0plus\Include-D__UVISION_VERSION="522" -D_RTE_ -DARMCM0P-o .\system_mkl25z4.o --omf_browse .\system_mkl25z4.crf --depend .\system_mkl25z4.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F65B18)
+F (.\src\main.c)(0x586280E6)(-c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB --li -g -O0 --apcs=interwork -I include-I"C:\Users\Kostas\Desktop\Σχολή\Microprocessors\Ασκήσεις Εργαστηρίων\LAB1\RTE\_KL25Z_Flash"-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\Device\ARM\ARMCM0plus\Include-D__UVISION_VERSION="522" -D_RTE_ -DARMCM0P-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+F (.\include\gpio_defs.h)(0x51A59D30)()
+F (.\include\lcd_4bit.h)(0x50E2AE20)()
+F (.\include\switches.h)(0x51A59D30)()
